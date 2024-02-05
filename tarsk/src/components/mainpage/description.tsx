@@ -1,4 +1,4 @@
-import "./index.scss"
+import {} from "react"
 
 export function Description() {
     return (
