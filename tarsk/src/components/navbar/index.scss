@@ -1,27 +1,32 @@
+@import '../variables.scss';
 #container {
-    width: 100%;
-    display: inline-block;
+    display: flex;
+    flex-direction: column; 
 }
 nav {
     overflow: hidden;
-    background-color: #333;
+    background-color: $color-pink;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 10%;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
     ul {
       text-align: center;
       list-style-type: none;
-      list-style-type: none;
       margin: 0;
-      padding: 15px;
+      padding: 0;
+      :hover{
+          text-decoration: solid;
+          color: $color-white;
+      }
       li {
-        display: inline;
-        font-size: 17px;
-        padding: 14px;
+        font-size: 25px;
+        padding: 15%;
       }
     }
 }
-  
 .content {
     text-align: center;
 }
