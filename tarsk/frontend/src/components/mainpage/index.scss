@@ -1,4 +1,6 @@
 @import '../variables.scss';
+@import '../main.scss';
+
 
 .mainpage {
     height: 100%;
@@ -23,6 +25,12 @@
             font-size: 1.5rem;
             text-align: center;
             margin-bottom: 2rem;
+        }
+        .buttons, .buttons div {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: column;
         }
         
     
