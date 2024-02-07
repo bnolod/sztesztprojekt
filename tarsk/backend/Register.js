@@ -1,6 +1,9 @@
-import express from 'express';
+import express, { json } from 'express';
 import mysql from 'mysql';
 import cors from 'cors';
+import bodyParser from 'body-parser';
+
+const jsonParser = bodyParser.json();
 
 const app = express();
 
@@ -12,7 +15,7 @@ const db = mysql.createConnection({
     database: 'tarsk'
 });
 
-app.post('/register', (req, res) => {
+app.post('/register', jsonParser, (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;

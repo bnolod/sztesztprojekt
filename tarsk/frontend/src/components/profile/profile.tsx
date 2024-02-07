@@ -8,9 +8,22 @@ export function RegisterScreen() {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [email, setEmail] = useState("")
+    const [data, setData] = useState({})
 
 function Register(event: any) {
     event.preventDefault()
+    console.log(JSON.stringify(data))
+    
+    setData({ "username":username, "password":password, "email":email });
+    console.log(JSON.stringify(data))
+
+    fetch("http://localhost:8081/register/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+    })
     console.log(username, password, confirmPassword, email)
 }
  return (
