@@ -1,15 +1,20 @@
 import {} from "react"
 import { useState } from "react"
-
+import { CookiesProvider, useCookies } from "react-cookie";
 
 
 export function Buttons() {
-    const [loggedIn, setloggedIn] = useState(1)
+    const [cookies, setCookie] = useCookies(["user"]);
+
+    function handleLogin(user) {
+        setCookie("user", user, { path: "/" });
+    }
 
     return (
+        <CookiesProvider>
         <div className="buttons">
             
-            {loggedIn==1
+            {cookies.user
                 ?
              <div>
                 <button className="button" id="swipe">Start swiping</button>
@@ -24,5 +29,6 @@ export function Buttons() {
                 <button id="register">Register</button>
                 </div>}
         </div>
+        </CookiesProvider>
     )
 }
