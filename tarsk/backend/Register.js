@@ -19,6 +19,7 @@ app.post('/register', jsonParser, (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    console.log(req.body)
     db.query(
         "INSERT INTO login (username, password, email) VALUES (?,?,?)",
         [username, password, email],

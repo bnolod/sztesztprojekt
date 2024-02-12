@@ -28,7 +28,7 @@ function Register(event: any) {
 }
  return (
     <div className="overlay">
-        <form onSubmit={Register}>
+        <form onSubmit={e=>{Register(e)}}>
             <div>
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" onChange={e=> setUsername(e.target.value)}/>
